@@ -190,7 +190,7 @@ background-color: var(--backgroundcolor)
     margin-right: auto;
     padding-top: 200px;
     padding-bottom: 200px;    
-    background-image: linear-gradient(to right,rgba(47, 48, 58, 0.7),  rgba(47, 48, 58, 0.7)), url(./images/Heade.jpg);
+    background-image: linear-gradient(to right,rgba(47, 48, 58, 0.3),  rgba(47, 48, 58, 0.3)), url(./images/Img.png);
     background-color:var(--hero-back-color);
     background-repeat: no-repeat;
     background-size: cover;
@@ -614,15 +614,15 @@ footer {background-color: #2F303A;}
 
 .social-link-footer {
     display: block;
-    margin-left: 70px;
+    margin-left: 84px;
 }
 
 .form-footer {
+    position: relative;
     margin-left: 93px;
 }
 .footer-input {
-    position: relative;
-   padding: 15px;
+    padding: 15px;
     width: 330px;
     /* height: 50px; */
     border: none;
@@ -631,6 +631,20 @@ footer {background-color: #2F303A;}
     background: #2F303A;
     color: #FFFFFF;
     font-family: Roboto, sans-serif;
+}
+.footer-label {
+    color: rgba(255, 255, 255, 0.6);
+    display: block;
+    position: absolute;
+    left: 16px;
+    bottom: 50%;
+    transform: translateY(45px) ;
+
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+.footer-input:focus + .footer-label {
+    transform: translateY(8px);
 }
 
 .footer-submit {
@@ -916,6 +930,10 @@ footer {background-color: #2F303A;}
 
     border-radius: 4px;
     height: 40px;
+
+    transition-property: border;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .form p {
     margin-top: 0;
@@ -949,6 +967,9 @@ textarea {
     margin: 0;
     padding: 0;
     width: 100%;
+    transition-property: fill;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     /* border: 1px solid red; */
     /* fill: #ff0000; */
 }
@@ -962,6 +983,7 @@ textarea:focus {
     border: 1px solid #2196F3
 }
 .checkbox {
+    position: relative;
     align-content: center;
     margin-left: auto;
     margin-right: auto;
@@ -975,8 +997,41 @@ textarea:focus {
     color: #757575;
 
 }
+.icon-check {
+    display: inline-block;
+    position: absolute;
+    left: -20px;
+    bottom: 6px;
+    content: '';
+    width: 16px;
+    height: 15px;
+       
+    border: 2px solid #212121;
+    border-radius: 4px;
+    box-sizing: border-box;
+
+    transition-property: background-image;
+    transition-duration: 1000ms;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+
+    }
+.check:checked ~ .icon-check {
+    background-image: url(./images/check.svg);
+    background-position: center;
+    background-size: contain;
+    /* background-color: #2196F3; */
+    border: 2px solid #2196F3;
+    outline: #2196F3;
+    background-origin: border-box;
+
+    
+}
 .check {
     margin-right: 7px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: absolute;
 }
 .check + a {
     color: var(--link-color-origin);
